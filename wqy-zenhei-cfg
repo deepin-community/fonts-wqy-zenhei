@@ -1,0 +1,30 @@
+#!/bin/bash
+###############################################
+#   WenQuanYi Fonts Preference Configuration Utility
+#  by Qianqian Fang <fangq at nmr.mgh.harvard.edu>
+###############################################
+TEXTDOMAIN=wqy-zenhei-cfg
+
+optbmp=$"Bitmap Fonts"
+optaa=$"Vector Fonts"
+optnone=$"Do Nothing"
+
+fontpref=$(zenity  --width=200 --height=200 --title $"WenQuanYi Font Preference" \
+--list  --text $"Please select your preference to display Chinese characters: Bitmap (sharp) or Anti-aliased Vector Fonts (smooth)" \
+--radiolist --column $"Select" --column $"Preference" TRUE "$optbmp (bitmap)" FALSE "$optaa (aa)" FALSE "$optnone (cancel)"); 
+
+if [ "$fontpref" ]; then
+	fontpref=`echo $fontpref | sed -e 's/.*(\(.*\)).*/\1/g' -e 's/ //g'`
+	if [ "$fontpref" = "cancel" ]; then
+		exit 0;
+	fi;
+        commitres=`zenheiset $fontpref`;
+	if [ $? == 0 ]; then
+		zenity --info --text $"Change committed. You may need to restart your X-window or browser to enable the new settings."
+	else
+        	zenity --error --text $"Commit failed."
+		exit 1
+	fi;
+fi;
+
+exit 0

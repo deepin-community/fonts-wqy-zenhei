@@ -1,0 +1,32 @@
+Description: zenheiset adjustment
+ Minor file location adjustment matching Debian package location
+Author: Osamu Aoki <osamu@debian.org>
+--- a/zenheiset
++++ b/zenheiset
+@@ -8,9 +8,8 @@
+ 
+ FAVAIL=/etc/fonts/conf.avail
+ FCONF=/etc/fonts/conf.d
+-BMPCONF=43-wqy-zenhei-sharp.conf
+-BMPSTDCONF=66-wqy-zenhei-sharp-no13px.conf
+-AACONF=44-wqy-zenhei.conf
++BMPCONF=63-wqy-zenhei-sharp.conf
++AACONF=64-wqy-zenhei.conf
+ 
+ 
+ if [ $# -ne 1 ]; then
+@@ -31,14 +30,6 @@
+      if [ $1 = "bitmap" -o $1 = "bitmapfull" ]; then
+          if [ -f "$FAVAIL/$BMPCONF" ]; then
+              ln -sf $FAVAIL/$BMPCONF $FCONF/$BMPCONF
+-             #if [ $1 = "bitmap" ]; then
+-             #     if [ -f "$FAVAIL/$BMPSTDCONF" ]; then
+-             #         ln -sf $FAVAIL/$BMPSTDCONF $FCONF/$BMPSTDCONF
+-             #     else
+-             #         echo $FAVAIL/$BMPSTDCONF does not exist!
+-             #         exit 2
+-             #     fi
+-             #fi
+          else
+              echo $FAVAIL/$BMPCONF does not exist!
+              exit 2

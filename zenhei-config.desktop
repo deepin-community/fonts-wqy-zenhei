@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=WenQuanYi Font Preference Setup
+Name[ja]=WenQuanYiフォントの設定
+Name[ko]=WenQuanYi 글꼴설정
+Name[zh_CN]=文泉驿字体偏好设置
+Name[zh_TW]=文泉驛字體偏好設置
+Comment=Configure the default WenQuanYi Zen Hei font for your Chinese desktop
+Comment[ja]=中国語フォントを優先WenQuanYi Zen Hei ツール用のデスクトップ設定
+Comment[ko]=중국의 글꼴을 최우선 WenQuanYi Zen Hei  도구를위한 데스크톱 환경 설정
+Comment[zh_CN]=为中文桌面设定文泉驿字体优先级的工具
+Comment[zh_TW]=為中文桌面設定文泉驛字體優先級的工具
+Exec=gksu wqy-zenhei-cfg
+Icon=wqy-zenhei-cfg
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Settings;
+#X-Ubuntu-Gettext-Domain=wqy-zenhei

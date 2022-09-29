@@ -1,0 +1,2 @@
+rm_conffile /etc/fonts/conf.avail/44-wqy-zenhei.conf 0.9.45-6~ ttf-wqy-zenhei
+rm_conffile /etc/fonts/conf.avail/43-wqy-zenhei-sharp.conf 0.9.45-6~ ttf-wqy-zenhei

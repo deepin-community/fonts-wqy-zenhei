@@ -1,0 +1,58 @@
+#!/bin/sh
+############################################################
+#             WenQuanYi Font Packaging System
+#
+#  postinst: post-installation script for deb package
+#
+#  Author: Qianqian Fang <fangq at nmr.mgh.harvard.edu>
+#  History:
+#      2009/05/26    Initial version for MicroHei
+#  
+#  Macro %NAME% and %VERSION% must be replaced before running
+#
+############################################################
+
+PREFIX=/usr/share/fonts/wenquanyi/
+NAME=%NAME%
+INSTALLPATH=$PREFIX/$NAME
+XORG_CONF="/etc/X11/xorg.conf"
+FONTCONFIG_CONF="/etc/fonts/fonts.conf" 
+CONFPATH="/etc/fonts/conf.d/"
+CONFAVAILPATH="/etc/fonts/conf.avail"
+
+
+if [ -f /usr/X11R6/bin/mkfontdir ]; then
+   /usr/X11R6/bin/mkfontdir $PREFIX/$NAME
+elif [ -f /usr/bin/mkfontdir ]; then
+   /usr/bin/mkfontdir $PREFIX/$NAME
+fi
+
+[ -f /usr/bin/fc-cache ] && /usr/bin/fc-cache -f $INSTALLPATH
+
+
+if [ -f /usr/sbin/chkfontpath ]; then
+	/usr/sbin/chkfontpath -q -a $PREFIX/$NAME
+elif [ -f chkfontpath ]; then
+        chkfontpath -q -a $PREFIX/$NAME
+elif [ -f $XORG_CONF ]; then
+
+    #echo "prepare to modify $XORG_CONF"
+    if ! grep 'FontPath\t"/usr/share/fonts/wenquanyi/$NAME/"' $XORG_CONF ; then
+        cp $XORG_CONF $INSTALLPATH/xorg.conf.backup
+        awk '/Section "Files"/ {doprint=1;} \
+       	     /EndSection/ {if(doprint==1) \
+               	   print "\tFontPath\t\"/usr/share/fonts/wenquanyi/$NAME/\""; doprint=0;} \
+                /.*/ {print;}' $INSTALLPATH/xorg.conf.backup >  $XORG_CONF
+       	#echo "add FontPath line to xorg.conf"
+    #else
+       	#echo "$XORG_CONF was previously modified, skip"
+    fi
+fi
+
+if [ -d $CONFAVAILPATH ]; then
+     #cp $PREFIX/$NAME/*-$NAME*.conf $CONFAVAILPATH
+     mkdir -p $CONFPATH
+     for fn in $PREFIX/$NAME/*-$NAME*.conf; do
+         ln -sf $CONFAVAILPATH/`basename $fn` $CONFPATH
+     done
+fi 

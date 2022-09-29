@@ -1,0 +1,20 @@
+#!/bin/sh
+############################################################
+#             WenQuanYi Font Packaging System
+#
+#  postrm: post-uninstallation script for deb package
+#
+#  Author: Qianqian Fang <fangq at nmr.mgh.harvard.edu>
+#  History:
+#      2009/05/26    Initial version for MicroHei
+#  
+#  Macro %NAME% and %VERSION% must be replaced before running
+#
+###########################################################
+
+PREFIX=/usr/share/fonts/wenquanyi/
+NAME=%NAME%
+#if [ "$1" = "0" ]; then
+	[ -f /usr/sbin/chkfontpath ] && /usr/sbin/chkfontpath -q -r $PREFIX/$NAME
+#fi
+[ -f /usr/bin/fc-cache ] && /usr/bin/fc-cache

@@ -1,0 +1,4 @@
+wqy-zenhei.ttc usr/share/fonts/truetype/wqy/
+debian/25-wqy-zenhei.conf etc/fonts/conf.avail/
+debian/64-wqy-zenhei.conf etc/fonts/conf.avail/
+debian/63-wqy-zenhei-sharp.conf etc/fonts/conf.avail/

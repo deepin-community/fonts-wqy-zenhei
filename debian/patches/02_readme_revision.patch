@@ -1,0 +1,28 @@
+Description: TYpo fix to README
+ Minor typographic revisions to the upstream README file.
+ Originally DP: 2008-07-05 and updated in 2011-12-17
+Author: Anthony Fok <foka@debian.org> and Osamu Aoki <osamu@debian.org>
+--- a/README
++++ b/README
+@@ -38,7 +38,7 @@
+             Copyright (c) 2005 Tsong-Min Wu, Tsong-Huey Wu and Edward G.J. Lee.
+ 
+        Part of the embedded bitmap glyphs were derived from
+-         "firefly bitmap fonts" [2], Copyright (c) 2004, Firefly 
++         "Firefly bitmap fonts" [2], Copyright (c) 2004, Firefly 
+ 
+        The mono-spaced Latin glyphs were derived from M+ M2 Light
+             Copyright (c) 2002-2008 M+ FONTS PROJECT 
+@@ -67,10 +67,10 @@
+ with the provided configuration files, further enhance the 
+ on-screen performance.
+ 
+-WenQuanYi Zen Hei provides a fairly complete coverage to Chinese 
++WenQuanYi Zen Hei provides a fairly complete coverage of Chinese 
+ Hanzi glyphs, including both simplified and traditional forms. 
+ The total glyph number in this font is over 35,000, including over 
+-27,000 Chinese Hanzi. This font has full coverage CJK Unified 
++27,000 Chinese Hanzi. This font has full coverage of CJK Unified 
+ Ideographs (U4E00-U9FC3) and CJK Extension A (U3400-U4DB5), 
+ as well as the code-points needed for zh_cn, zh_sg, zh_tw, 
+ zh_hk, zh_mo, ja (Japanese) and ko (Korean) locales. 

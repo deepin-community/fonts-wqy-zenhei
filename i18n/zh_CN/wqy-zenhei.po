@@ -1,0 +1,27 @@
+#: ./wqy-zenhei:3
+msgid "Bitmap Fonts"
+msgstr "优先使用点阵字体"
+#: ./wqy-zenhei:4
+msgid "Vector Fonts"
+msgstr "优先使用矢量字体"
+#: ./wqy-zenhei:5
+msgid "Do Nothing"
+msgstr "保持现状"
+#: ./wqy-zenhei:8
+msgid "WenQuanYi Font Preference"
+msgstr "文泉驿字体偏好设置"
+#: ./wqy-zenhei:8
+msgid "Please select your preference to display Chinese characters: Bitmap (sharp) or Anti-aliased Vector Fonts (smooth)"
+msgstr "请根据您的使用偏好来设定优先显示的中文字体"
+#: ./wqy-zenhei:8
+msgid "Select"
+msgstr "选择"
+#: ./wqy-zenhei:8
+msgid "Preference"
+msgstr "偏好选项"
+#: ./wqy-zenhei:22
+msgid "Change committed. You may need to restart your X-window or browser to enable the new settings."
+msgstr "设置保存。您可能需要重新启动X-window或者浏览器来激活新的设置。"
+#: ./wqy-zenhei:24
+msgid "Commit failed."
+msgstr "保存失败。"

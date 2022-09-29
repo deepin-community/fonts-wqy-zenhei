@@ -1,0 +1,29 @@
+Package: %NAME%
+Version: %VERSION%
+Section: Miscellaneous - Graphical
+Priority: optional
+Replaces: ttf-%NAME%
+Architecture: all
+Depends: xfonts-utils (>= 1.0.0)
+Suggests: xfs | xserver
+Installed-Size: 16605
+Maintainer: Qianqian Fang <fangq@nmr.mgh.harvard.edu>
+Description: WenQuanYi Zen Hei - A Hei-Ti Style (sans-serif) Chinese font 
+ WenQuanYi Zen Hei is a Hei-Ti style (sans-serif) Chinese 
+ outline font. It is designed for general purpose text layout 
+ and on-screen display of Chinese characters and symbols from
+ many other languages. The emboldened strokes of the font glyphs 
+ produce enhanced screen contrast, making it easier to read and
+ recognize. The embedded bitmap glyphs, which can be enabled 
+ with the provided configuration files, further enhance the 
+ on-screen performance.
+ WenQuanYi Zen Hei provides a fairly complete coverage to Chinese 
+ Hanzi glyphs, including both simplified and traditional forms. 
+ The total glyph number in this font is over 35,000, including over 
+ 27,000 Chinese Hanzi. This font has full coverage CJK Unified 
+ Ideographs (U4E00-U9FC3) and CJK Extension A (U3400-U4DB5), 
+ as well as the code-points needed for zh_cn, zh_sg, zh_tw, 
+ zh_hk, zh_mo, ja (Japanese) and ko (Korean) locales. 
+ Starting from version 0.8, this font package has contained 
+ two font families, i.e. the proportionally-spaced Zen Hei, 
+ and a mono-spaced face named "WenQuanYi Zen Hei Mono".

@@ -1,0 +1,38 @@
+Source: fonts-wqy-zenhei
+Section: fonts
+Priority: optional
+Maintainer: Debian Fonts Task Force <pkg-fonts-devel@lists.alioth.debian.org>
+Uploaders: Zhengpeng Hou <zhengpeng-hou@ubuntu.com>, Anthony Fok <foka@debian.org>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.5.1
+Homepage: http://wenq.org/wqy2/
+Vcs-Git: https://salsa.debian.org/fonts-team/fonts-wqy-zenhei.git
+Vcs-Browser: https://salsa.debian.org/fonts-team/fonts-wqy-zenhei
+
+Package: fonts-wqy-zenhei
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, fontconfig (>= 2.3.1-1)
+Replaces: ttf-wqy-zenhei (<< 0.9.45-5)
+Provides: ttf-wqy-zenhei
+Breaks: ttf-wqy-zenhei (<< 0.9.45-5)
+Description: "WenQuanYi Zen Hei" A Hei-Ti Style (sans-serif) Chinese font
+ WenQuanYi Zen Hei is a Hei-Ti style (sans-serif type) Chinese font.
+ It was designed for general purpose text formatting and on-screen
+ display of Chinese characters among many other languages. The embolden
+ strokes of the font glyphs produces enhanced screen contrast, making
+ it easier to read and recognize. The embedded bitmap glyphs further
+ enhance on-screen performance, and can be enabled with the provided
+ configuration files.
+ .
+ WenQuanYi Zen Hei provides a fairly complete coverage of Chinese
+ Hanzi glyphs, including both simplified and traditional forms. 
+ The total glyph number in this font is over 35,000, including over 
+ 21,000 Chinese Hanzi. This font provides full coverage of GBK (CP936)
+ charset, CJK Unified Ideographs, as well as the code-points needed
+ for zh_CN, zh_SG, zh_TW, zh_HK, zh_MO, ja (Japanese) and ko (Korean)
+ locales for fontconfig.
+ .
+ Starting from version 0.8, this font package provides two font families,
+ i.e. the proportional "WenQuanYi Zen Hei", and the monospaced typeface 
+ named "WenQuanYi Zen Hei Mono".

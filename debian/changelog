@@ -1,0 +1,164 @@
+fonts-wqy-zenhei (0.9.45-8) unstable; urgency=medium
+
+  * Team upload.
+  * debian/control:
+    - Update Vcs-*
+    - Bump debhelper compat to v13.
+    - Bump Standards-Version to 4.5.1.
+    - Update package uploader list. (Closes: #927591)
+  * debian/rules: Drop custom dh_builddeb override.
+  * debian/25-wqy-zenhei.conf: Apply patch from Ubuntu.
+    (Closes: #687156)
+
+ -- Boyuan Yang <byang@debian.org>  Thu, 31 Dec 2020 14:36:49 -0500
+
+fonts-wqy-zenhei (0.9.45-7) unstable; urgency=medium
+
+  * Team upload.
+  * debian/control
+    - drop transitional dummy ttf-wqy-zenhei package (Closes: #868206)
+    - update Vcs-*
+    - set Build-Depends: debhelper (>= 10)
+    - set Standards-Version: 4.0.0
+    - update Homepage:
+  * debian/compat
+    - set 10
+  * debian/copyright
+    - convert to copyright format 1.0
+
+ -- Hideki Yamane <henrich@debian.org>  Mon, 31 Jul 2017 22:17:15 +0900
+
+fonts-wqy-zenhei (0.9.45-6) unstable; urgency=medium
+
+  * Team upload.
+  * debian/maintscript
+    - remove obsolete conffiles (Closes: #669953)
+  * debian/control
+    - add "Pre-Depends: dpkg" to support above rm_conffile in maintscript
+
+ -- Hideki Yamane <henrich@debian.org>  Wed, 29 Jan 2014 21:39:41 +0900
+
+fonts-wqy-zenhei (0.9.45-5) unstable; urgency=low
+
+  * Rename source package to "fonts-wqy-zenhei" to fit the Font
+    Packages Naming Policy.
+  * Use dh minimal rules file
+  * Update Standards to 3.9.4 (checked)
+  * Bump debhelper compatibility to 9
+  * Use xz extreme compression for deb packages
+  * Use git for packaging: adapt Vcs-* fields
+  * Add Multi-Arch: foreign field
+  * Add myself to Uplaoders
+  * Add explicit Copyright mention in debian/copyright
+  * Drop multiple value in 'test' in 25-wqy-zenhei.conf. Closes: #714859
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 16 Aug 2013 11:58:07 +0200
+
+ttf-wqy-zenhei (0.9.45-4) unstable; urgency=low
+
+  * Team upload by Debian Fonts Task Force.
+  * Removed the recommends on x-ttcidfont-conf.  Thanks Steve 
+    Langasek. Closes: #660061
+ 
+ -- Osamu Aoki <osamu@debian.org>  Wed, 18 Apr 2012 22:31:49 +0900
+
+ttf-wqy-zenhei (0.9.45-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix fontconfig configuration file in right way by splitting and
+    moving them to right places.  This also fix regression of 
+    diasabling 01_remove_alias_block.dpatch patch in 0.9.45-1.
+    zenheiset was ajusted accordingly.  Closes: #533189
+
+ -- Osamu Aoki <osamu@debian.org>  Sat, 17 Dec 2011 20:14:58 +0900
+
+ttf-wqy-zenhei (0.9.45-3) unstable; urgency=low
+
+  * Team upload by Debian Fonts Task Force.
+  * Correct mailing list address in Maintainer field.
+
+ -- Aron Xu <aron@debian.org>  Mon, 27 Jun 2011 14:41:41 +0800
+
+ttf-wqy-zenhei (0.9.45-2) unstable; urgency=low
+
+  [ Zhengpeng Hou ]
+  * Changed the sections from x11 to fonts
+
+  [ Aron Xu ]
+  * Std-ver: 3.9.2, no change needed.
+  * Set Debian Font Task Force to Maintainer.
+
+ -- Zhengpeng Hou <zhengpeng-hou@ubuntu.com>  Mon, 27 Jun 2011 01:06:10 +0800
+
+ttf-wqy-zenhei (0.9.45-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fix "U+9583 is strange" in upstream. (Closes: #526928)
+  * Removed 66-wqy-zenhei-sharp.conf in upstream. (Closes: #491254)
+  * Dropped off defoma.
+  * Bump Standards-Version to 3.8.4.
+  * Disable patch in debian/rules.
+
+ -- Zhengpeng Hou <zhengpeng-hou@ubuntu.com>  Fri, 12 Mar 2010 09:32:00 +0000
+
+ttf-wqy-zenhei (0.8.38-1) unstable; urgency=low
+
+  [ Zhengpeng Hou ]
+  * New Upstream release.
+  * Drop 01_remove_alias_block.dpatch and 02_readme_revision.dpatch
+
+  [ Anthony Fok ]
+  * Install the new "zenheiset" in /usr/share/doc/ttf-wqy-zenhei/examples/
+    for now.  This tool allows the end-user to choose among anti-aliased
+    or bitmap display style for the WenQuanYi Zen Hei font.
+  * Updated package description for the new "WenQuanYi Zen Hei Mono" typeface.
+  * Minor revisions: debhelper (>= 7); Standards-Version: 3.8.1; wording, etc.
+  * Fix Lintian error "W: ttf-wqy-zenhei: maintainer-script-ignores-errors
+    postinst" by adding "set -e".
+
+ -- Anthony Fok <foka@debian.org>  Fri, 20 Mar 2009 20:50:13 +0800
+
+ttf-wqy-zenhei (0.6.26-2) unstable; urgency=low
+
+  * Disable builtin bitmap font, its really not so
+    well.
+
+ -- Zhengpeng Hou <zhengpeng-hou@ubuntu.com>  Mon, 07 Jul 2008 06:35:56 +0000
+
+ttf-wqy-zenhei (0.6.26-1) unstable; urgency=low
+
+  [ Zhengpeng Hou ]
+  * New upstream release.
+  * Update 01_remove_alias_block.dpatch. 
+
+  [ Anthony Fok ]
+  * Updated debian/copyright and package description
+  * Upgraded to Standards-Version: 3.8.0 (was 3.7.3)
+  * Added myself to the Uploaders field.  :-)
+
+ -- Zhengpeng Hou <zhengpeng-hou@ubuntu.com>  Sat, 05 Jul 2008 08:42:20 +0800
+
+ttf-wqy-zenhei (0.5.23-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Zhengpeng Hou <zhengpeng-hou@ubuntu.com>  Mon, 24 Mar 2008 06:46:03 +0000
+
+ttf-wqy-zenhei (0.4.23-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update 01_remove_alias_block.dpatch. 
+
+ -- ZhengPeng Hou <zhengpeng-hou@ubuntu.com>  Fri, 08 Feb 2008 11:51:38 +0000
+
+ttf-wqy-zenhei (0.2.15-2) unstable; urgency=low
+
+  * Move Homepage to source section. Closes: #462356
+
+ -- ZhengPeng Hou <zhengpeng-hou@ubuntu.com>  Mon, 04 Feb 2008 11:37:17 +0000
+
+ttf-wqy-zenhei (0.2.15-1) unstable; urgency=low
+
+  * Inital release. Closes: #454736
+
+ -- Zhengpeng Hou <zhengpeng-hou@ubuntu.com>  Sat, 1 Dec 2007 16:54:11 +0800

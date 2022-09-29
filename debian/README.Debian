@@ -1,0 +1,6 @@
+Upstream has provided a zenity based scripts to help users to 
+configure, I've disabled it by default, anyone want to use it 
+can run it from /usr/share/doct/ttf-wqy-zenhei/examples/. 
+
+ --Zhengpeng Hou <zhengpeng-hou@ubuntu.com> Sun, 2 Dec 17:51:28 +0800
+

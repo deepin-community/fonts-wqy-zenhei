@@ -1,0 +1,36 @@
+#!/bin/sh
+############################################################
+#             WenQuanYi Font Packaging System
+#
+#  prerm: pre-uninstallation script for deb package
+#
+#  Author: Qianqian Fang <fangq at nmr.mgh.harvard.edu>
+#  History:
+#      2009/05/26    Initial version for MicroHei
+#
+#  Macro %NAME% and %VERSION% must be replaced before running
+#
+###########################################################
+
+PREFIX=/usr/share/fonts/wenquanyi/
+NAME=%NAME%
+INSTALLPATH=$PREFIX/$NAME
+XORG_CONF="/etc/X11/xorg.conf"
+FONTCONFIG_CONF="/etc/fonts/fonts.conf"
+CONFPATH="/etc/fonts/conf.d/"
+CONFAVAILPATH="/etc/fonts/conf.avail/"
+
+cd $PREFIX/$NAME
+rm -f fonts.dir fonts.scale fonts.cache* fonts.conf.bk xorg.conf.backup
+
+
+if [ -f $XORG_CONF ]; then
+    #echo "restoring $XORG_CONF"
+    grep -v 'FontPath.*"/usr/share/fonts/wenquanyi/$NAME/"' $XORG_CONF > $XORG_CONF.wqybk
+    mv $XORG_CONF.wqybk $XORG_CONF
+fi
+
+if [ -e $CONFPATH/*-$NAME*.conf ]; then
+	rm -f $CONFPATH/*-$NAME*.conf
+fi
+
