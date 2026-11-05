@@ -1,3 +1,10 @@
+fonts-wqy-zenhei (0.9.45-8deepin1) unstable; urgency=medium
+
+  * fix: correct the 12-16px bitmap line metrics in WenQuanYi Zen Hei
+    Sharp to prevent clipped text in compact labels.
+
+ -- Wu JiangYu <wujiangyu@uniontech.com>  Thu, 05 Nov 2026 11:52:22 +0800
+
 fonts-wqy-zenhei (0.9.45-8) unstable; urgency=medium
 
   * Team upload.

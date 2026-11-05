@@ -1,0 +1,38 @@
+Description: Correct WenQuanYi Zen Hei Sharp bitmap line metrics
+ Generate a corrected TTC for packaging. The five embedded bitmap strikes
+ need additional space above the baseline; the 15px strike also needs one
+ more pixel below it. Glyph data and advance widths are unchanged.
+ .
+ The byte offsets apply only to the known 0.9.45 TTC. Check the complete
+ input and output hashes so an upstream update cannot be patched silently.
+Author: Wu JiangYu <wujiangyu@uniontech.com>
+Forwarded: no
+Last-Update: 2026-11-05
+
+--- a/Makefile
++++ b/Makefile
+@@ -9,6 +9,24 @@
+ PKGNAME=wqy-zenhei
+ VERSION=0.9.45
+ DEFAULTCONF=44-wqy-zenhei.conf
++
++# Correct only the verified 0.9.45 TTC; keep the original font unchanged.
++all:
++	printf '%s\n' '79c18ebe7b811951e8311bad7103ebeae8c337ed9988ea69e8a78a66cfe029b9  wqy-zenhei.ttc' | sha256sum -c -
++	mkdir -p build
++	cp wqy-zenhei.ttc build/wqy-zenhei.ttc
++	# EBLC horizontal ascender/descender at 12, 13, 14, 15 and 16px.
++	# Corrected pairs: (15,-3), (13,-3), (17,-3), (14,-4), (14,-4).
++	printf '\017\375' | dd of=build/wqy-zenhei.ttc bs=1 seek=16225805 conv=notrunc status=none
++	printf '\015\375' | dd of=build/wqy-zenhei.ttc bs=1 seek=16225853 conv=notrunc status=none
++	printf '\021\375' | dd of=build/wqy-zenhei.ttc bs=1 seek=16225901 conv=notrunc status=none
++	printf '\016\374' | dd of=build/wqy-zenhei.ttc bs=1 seek=16225949 conv=notrunc status=none
++	printf '\016\374' | dd of=build/wqy-zenhei.ttc bs=1 seek=16225997 conv=notrunc status=none
++	# Update the EBLC table-directory checksum to 0xfaa4a2e2.
++	printf '\372\244\242\342' | dd of=build/wqy-zenhei.ttc bs=1 seek=656 conv=notrunc status=none
++	printf '%s\n' '8a5bf035d026e06f5bcb5a7dc89d95a392fb202933908bbd9aa556d1418fda10  build/wqy-zenhei.ttc' | sha256sum -c -
++
++.PHONY: all
+ 
+ deb: i18n
+ 	-wqypkg/wqydebmkdir.sh $(PKGNAME)
