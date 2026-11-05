@@ -1,2 +1,3 @@
 03_fontconfig.patch
 02_readme_revision.patch
+04-fix-wqy-zenhei-bitmap-line-metrics.patch
